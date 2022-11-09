@@ -23,6 +23,7 @@ body{
     background-color: var(--black);
     color: var(--white);
     font-size: var(--font-size);
+    
 }
 h1, h2, h3 {
     margin:0;
@@ -36,13 +37,22 @@ a:hover{
     color: var(--lightblue);
     text-decoration: none;
 }
+img{
+    width: 100%;
+    }
 ul{
     margin:0;
 }
+.gradient{
+    height: 3px;
+    background: rgb(23,19,33);
+background: linear-gradient(90deg, rgba(13,76,115,1) 0%, rgba(23,144,191,1) 50%, rgba(89,193,217,1) 75%, rgba(242,211,153,1) 100%);
+}
 /* intro section*/
 #intro{
-    padding-bottom: 10rem;
-    width: 70%;
+    padding: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 #intro p{
     font-size: 1rem;
@@ -61,19 +71,77 @@ ul{
 #intro h2{
     font-size: 3rem;
     font-weight: 400;
-    
+    width: 75%;
 }
 h2 span{
      
 }
+/*project scetion */
+
+#projects{
+    padding: 3rem;
+    max-width: 1200px;
+    margin: 0 auto; 
+    display: grid;
+
+}
+#projects .project-heading{
+    color:var(--paleyellow);
+    margin-bottom: calc(2.5rem * 1.5); 
+}
+#projects .sub-title{
+    font-family: var(--secondaryfont);
+    margin: 0;
+    padding: 0;
+}
+#projects .title{
+    color: var(--aqua);
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+#projects .description{
+    background-color: var(--black);
+    border-radius: 10px;
+    text-align: left;
+    padding: 1.2rem 0.5rem;
+}
+#projects .technology{
+    list-style: none;
+    display: flex;
+    text-align: left;
+    gap: 1rem;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+#projects .project-screenshot{
+    
+    padding:1rem;
+    border-left: 1px solid var(--lightblue);
+    border-top: 1px solid var(--lightblue);;
+    border-radius: 10px;
+}
+#projects .project{
+    margin-bottom: 2rem;
+}
+
+
 /* contact section*/
+.section-drkblue{
+    background-color: var(--darkblue);
+    width: 100vw;
+}
 #contact{
     text-align: center;
     line-height: 1.5;
     width: 400px;
     margin: 0 auto;
     padding: 2rem 0;
-
+    
 }
 #contact h3{
     font-weight: 400;
@@ -94,12 +162,13 @@ h2 span{
 nav{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 6rem;
+    justify-content: center;
     font-size: 80%;
-    padding: 1rem;
+    padding: 1rem 1rem 4rem 3rem;
     align-items: center;
     color: var(--white);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 nav h1{
     font-family: var(--primaryfont);
@@ -107,6 +176,7 @@ nav h1{
     text-align: left;
     color: var(--aqua);
     text-align: center;
+    margin-right: auto;
 }
 nav ul{
     display: flex;
@@ -163,7 +233,7 @@ footer ul li{
 }
  
 
-@media (max-width: 800px){
+@media (max-width: 805px){
     nav{
         justify-content: center;
     }
@@ -173,4 +243,38 @@ footer ul li{
        margin-bottom: 1rem;;
     }
     
+}
+@media (min-width: 800px){
+    .project{
+        display: grid;
+        grid-template-columns: repeat(10,1fr);
+        gap: 1rem;
+    }
+    .project .project-description{
+       order: 2;
+       text-align: right;
+       grid-column: 5/11;
+       grid-row: 1/2;
+       
+    }
+    #projects .technology{
+        justify-content: flex-end;
+    }
+    .project .project-img{
+        grid-column: 1/6; 
+        grid-row: 1/2; 
+    }
+    #projects .reverse .project-description{
+        order: 2;
+        text-align: left;
+        grid-column: 1/7;
+
+
+    }
+    #projects .reverse .project-img{
+        grid-column: 6/11;
+    }
+    #projects .reverse .technology{
+        justify-content: flex-start;
+    }
 }
